@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#key_pressed" onMouseMoved="#mouseMove" prefHeight="800.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <children>
+      <BorderPane opacity="0.95" prefHeight="800.0" prefWidth="1600.0" style="-fx-background-color: #DFDFDF;">
+         <center>
+            <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Canvas fx:id="canvasTop" height="375.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onScroll="#onScroll" width="775.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <center>
+                        <Canvas fx:id="canvasRight" height="375.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onScroll="#onScroll" width="775.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <center>
+                        <Canvas fx:id="canvasFace" height="375.0" onDragDropped="#onDragDropped" onDragOver="#onDragOver" onScroll="#onScroll" width="775.0" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="48.0" prefWidth="135.0">
+                                 <children>
+                                    <Button fx:id="minusButton" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#minusClicked" prefHeight="45.0" prefWidth="45.0" text="-" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="topButton" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#topClicked" prefHeight="45.0" prefWidth="45.0" text="↑" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="plusButton" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#plusClicked" prefHeight="45.0" prefWidth="45.0" text="+" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="46.0" prefWidth="135.0">
+                                 <children>
+                                    <Button fx:id="leftButton" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#leftClicked" prefHeight="45.0" prefWidth="45.0" text="←" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="bot_clicked" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#botClicked" prefHeight="45.0" prefWidth="45.0" text="↓" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="rightButton" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rightClicked" prefHeight="45.0" prefWidth="45.0" text="→" textAlignment="CENTER">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="26.0" prefWidth="135.0">
+                                 <children>
+                                    <Button fx:id="rotateLeft" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateXLeft" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche6.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="rotateRight" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateXRight" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche1.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="rotateUp" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateYLeft" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche3.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="29.0" prefWidth="135.0">
+                                 <children>
+                                    <Button fx:id="rotateDown" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateYRight" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche2.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="rotateUp" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateZLeft" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche4.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="rotateDown" focusTraversable="false" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#rotateZRight" prefHeight="45.0" prefWidth="45.0">
+                                       <graphic>
+                                          <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="images/fleche5.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <CheckBox fx:id="segments" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#stroke" selected="true" text="Strokes">
+                                 <padding>
+                                    <Insets bottom="2.0" />
+                                 </padding></CheckBox>
+                              <CheckBox fx:id="colors" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#colors" selected="true" text="Colors">
+                                 <VBox.margin>
+                                    <Insets left="-8.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="2.0" />
+                                 </padding></CheckBox>
+                              <CheckBox alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#light" selected="true" text="Light">
+                                 <opaqueInsets>
+                                    <Insets left="25.0" />
+                                 </opaqueInsets>
+                                 <VBox.margin>
+                                    <Insets left="-16.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="2.0" />
+                                 </padding></CheckBox>
+                              <CheckBox fx:id="faces" alignment="TOP_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#fill" selected="true" text="Fill">
+                                 <VBox.margin>
+                                    <Insets left="-30.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="2.0" />
+                                 </padding></CheckBox>
+                              <Button mnemonicParsing="false" onAction="#centerModel" prefWidth="77.0" text="Center">
+                                 <VBox.margin>
+                                    <Insets left="2.0" top="12.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <ColorPicker fx:id="colorPickerStrokes" maxWidth="30.0" style="-fx-color-label-visible: false;">
+                                       <padding>
+                                          <Insets left="-1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="-8.0" />
+                                       </HBox.margin>
+                                    </ColorPicker>
+                                    <Label text="Strokes">
+                                       <HBox.margin>
+                                          <Insets left="-10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="16.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                 <children>
+                                    <ColorPicker fx:id="colorPickerFill" maxWidth="30.0" style="-fx-color-label-visible: false;">
+                                       <HBox.margin>
+                                          <Insets left="-36.0" />
+                                       </HBox.margin>
+                                    </ColorPicker>
+                                    <Label text="Fill">
+                                       <HBox.margin>
+                                          <Insets left="-10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="16.0" top="-8.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <SubScene fx:id="subscene" height="375.0" width="653.0">
+                          <root>
+                            <Region />
+                          </root>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </SubScene>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="-9.0" />
+                     </GridPane.margin>
+                  </HBox>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>

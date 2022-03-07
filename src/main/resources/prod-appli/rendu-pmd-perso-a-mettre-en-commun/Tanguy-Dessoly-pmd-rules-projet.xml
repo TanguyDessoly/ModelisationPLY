@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Custom Rules" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Ensemble des règles considérées pour le projet de Modé3D par Tanguy Dessoly
+    </description>
+
+<rule ref="category/java/design.xml/SimplifiedTernary"/>
+<rule ref="category/java/design.xml/SimplifyBooleanAssertion"/>
+<rule ref="category/java/design.xml/SimplifyBooleanExpressions"/>
+<rule ref="category/java/design.xml/SimplifyBooleanReturns"/>
+<rule ref="category/java/design.xml/SimplifyConditional"/>
+<rule ref="category/java/design.xml/SingularField"/>
+<rule ref="category/java/design.xml/ImmutableField"/>
+<rule ref="category/java/design.xml/CollapsibleIfStatements"/>
+<rule ref="category/java/design.xml/CyclomaticComplexity">
+    <properties>
+        <property name="classReportLevel" value="80"/>
+        <property name="methodReportLevel" value="10"/>
+        <property name="cycloOptions" value=""/>
+    </properties>
+</rule>
+
+<rule ref="category/java/codestyle.xml/UnnecessaryConstructor"/>
+<rule ref="category/java/codestyle.xml/UnnecessaryFullyQualifiedName"/>
+<rule ref="category/java/codestyle.xml/UnnecessaryReturn"/>
+<rule ref="category/java/codestyle.xml/UseDiamondOperator"/>
+<rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+<rule ref="category/java/codestyle.xml/BooleanGetMethodName"/>
+<rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
+<rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+<rule ref="category/java/codestyle.xml/PrematureDeclaration" />
+<rule ref="category/java/codestyle.xml/UnnecessaryLocalBeforeReturn">
+    <properties>
+        <property name="statementOrderMatters" value="false"/>
+    </properties>
+</rule>
+
+<rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"/>
+<rule ref="category/java/bestpractices.xml/SystemPrintln"/>
+<rule ref="category/java/bestpractices.xml/LooseCoupling"/>
+<rule ref="category/java/bestpractices.xml/LiteralsFirstInComparisons"/>
+<rule ref="category/java/bestpractices.xml/UnusedAssignment">
+    <properties>
+        <property name="checkUnusedPrefixIncrement" value="true"/>
+        <property name="reportUnusedVariables" value="false"/>
+    </properties>
+</rule>
+
+<rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops"/> 
+<rule ref="category/java/performance.xml/RedundantFieldInitializer" />
+
+
+<rule ref="category/java/errorprone.xml/AvoidLiteralsInIfCondition">
+    <properties>
+        <property name="ignoreMagicNumbers" value="0"/>
+        <property name="ignoreExpressions" value="true"/>
+    </properties>
+</rule>
+<rule ref="category/java/errorprone.xml/CloseResource">
+    <properties>
+        <property name="closeTargets" value=""/>
+        <property name="types" value="java.lang.AutoCloseable,java.sql.Connection,java.sql.Statement,java.sql.ResultSet"/>
+        <property name="closeAsDefaultTarget" value="true"/>
+        <property name="allowedResourceTypes" value=""/>
+        <property name="closeNotInFinally" value="false"/>
+    </properties>
+</rule>
+
+
+</ruleset>

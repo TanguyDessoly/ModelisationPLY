@@ -1,0 +1,13 @@
+Importants pour moi :
+SimplifyX : Important pour avoir du code concis
+CyclomaticComplexity : Si trop élevé, c'est souvent le genre de code que l'on ne comprends plus le lendemain ou la semaine d'après, encore pire pour les autres membres
+XNamingConventions : Important, l'on travaille à plusieurs, si l'on se trompe dans les conventions, cela peut pénaliser la compréhension des autres et même de soi-même
+LiteralsFirstInComparisons : Important pour ne pas avoir de nullPointerException
+CloseResource : C'est important car cela s'oublie vite et peut compromettre vite le comportement
+
+Refus de mettre pour l'instant :
+ControlStatementBraces/IfElseStmtsMustUseBrace : Je préfère le code concis et ne me perds pas sans les braces
+DataflowAnomalyAnalysis : Pour obtenir un return valide, il faut souvent une déclaration instanciée
+UselessParentheses : Cela permet tout de même une meilleure compréhension des conditions par moments
+LocalVariableCouldBeFinal : Dans les boucles c'est non (il existe un paramètre mais uniquement sur les foreach)
+LawOfDemeter : Trop de remaniement pour le moment
